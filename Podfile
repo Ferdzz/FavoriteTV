@@ -9,7 +9,7 @@ target 'FavoriteTV' do
   pod 'R.swift', '~> 5.0.3'
   pod 'Alamofire', '~> 4.8.0'
   pod 'AlamofireObjectMapper', '~> 5.2'
-
+  pod 'SDWebImage', '~> 5.0' 
 
   target 'FavoriteTVTests' do
     inherit! :search_paths

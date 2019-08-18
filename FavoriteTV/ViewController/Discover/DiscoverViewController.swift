@@ -19,6 +19,8 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = R.string.localizable.discoverTitle()
+        
         // Register nibs
         self.collectionView.register(R.nib.discoverMovieCollectionViewCell)
         
@@ -82,6 +84,7 @@ extension DiscoverViewController: UICollectionViewDelegateFlowLayout {
         guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
             preconditionFailure("Supports only FlowLayout")
         }
+        // This could be improved by caching the size of the cells for a certain sizeclass after the first calculation
         // Fit 2 cells when regular, fit 1 when compact
         let cellsToFit: CGFloat = collectionView.traitCollection.horizontalSizeClass == .compact ? 1 : 2
         let cellSize =

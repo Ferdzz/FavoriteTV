@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import SDWebImage
 
 struct DiscoverMovieCollectionViewCellViewModel {
     let title: String
     let subtitle: String
     let description: String
+    let imageUrl: String
     
     init(discoverMovieModel: DiscoverMovieModel) {
         self.title = discoverMovieModel.title ?? ""
         self.subtitle = discoverMovieModel.releaseDate ?? ""
         self.description = discoverMovieModel.overview ?? ""
+        self.imageUrl = "\(Constants.tmdbImageRoot)\(discoverMovieModel.posterPath ?? "")"
     }
 }
 
@@ -37,6 +40,7 @@ class DiscoverMovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(viewModel: DiscoverMovieCollectionViewCellViewModel) {
+        self.imageView.sd_setImage(with: URL(string: viewModel.imageUrl), completed: nil)
         self.titleLabel.text = viewModel.title
         self.dateLabel.text = viewModel.subtitle
         self.descriptionLabel.text = viewModel.description

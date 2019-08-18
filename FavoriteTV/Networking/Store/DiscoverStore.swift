@@ -18,7 +18,7 @@ class DiscoverStore {
     func discover(completion: @escaping (DiscoverResponseModel?, Error?) -> Void) {
         // This networking layer could be reworked to make it so we don't have to specify the paramters
         // everytime, or have to parse the JSON manually. For now this will have to do
-        let discoverUrl = "\(Constants.tmdbRoot)/discover/movie"
+        let discoverUrl = "\(Constants.tmdbApiRoot)/discover/movie"
         let parameters: Parameters = ["api_key": Constants.tmdbApiKey]
         Alamofire.request(discoverUrl, method: .get, parameters: parameters)
             .responseObject { (response: DataResponse<DiscoverResponseModel>) in
