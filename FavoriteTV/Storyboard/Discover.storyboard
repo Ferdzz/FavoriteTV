@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hca-do-fDZ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qPB-Sf-Fx2">
+            <objects>
+                <navigationController id="hca-do-fDZ" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J6R-aS-kpK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eN6-cB-hxh" kind="relationship" relationship="rootViewController" id="7vX-BC-ooC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLT-JX-YXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-839" y="160"/>
+        </scene>
+        <!--Discover View Controller-->
+        <scene sceneID="4PR-cY-sad">
+            <objects>
+                <viewController id="eN6-cB-hxh" customClass="DiscoverViewController" customModule="FavoriteTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sUd-HK-4ES">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Aar-vn-0rB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HFo-DT-jHt">
+                                    <size key="itemSize" width="73" height="153"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Aar-vn-0rB" firstAttribute="leading" secondItem="Lw5-dO-kEj" secondAttribute="leading" id="3Hh-Ys-Lii"/>
+                            <constraint firstItem="Aar-vn-0rB" firstAttribute="top" secondItem="Lw5-dO-kEj" secondAttribute="top" id="JFV-VR-c5k"/>
+                            <constraint firstItem="Lw5-dO-kEj" firstAttribute="bottom" secondItem="Aar-vn-0rB" secondAttribute="bottom" id="QfT-hT-MYZ"/>
+                            <constraint firstItem="Lw5-dO-kEj" firstAttribute="trailing" secondItem="Aar-vn-0rB" secondAttribute="trailing" id="TqU-99-ijM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lw5-dO-kEj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sed-dr-fCe"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Aar-vn-0rB" id="aKp-8h-zlS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWi-Hc-ECj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.014492753623188" y="158.70535714285714"/>
+        </scene>
+    </scenes>
+</document>
