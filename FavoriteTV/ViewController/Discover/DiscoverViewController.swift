@@ -11,10 +11,12 @@ import UIKit
 class DiscoverViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var favoritesBarButtonItem: UIBarButtonItem!
     
     private var discoverManager = DiscoverManager()
     
-    private var model: DiscoverModel?
+    private var model: MoviesModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,12 @@ class DiscoverViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
         
+        // Setup favorite button
+        self.favoritesBarButtonItem.title = R.string.localizable.favorites()
+
         // Start request
         self.fetchData()
+        
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -45,20 +51,31 @@ class DiscoverViewController: UIViewController {
     // MARK: - Networking
     
     private func fetchData() {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         self.discoverManager.discover { (model, error) in
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            }
             if let error = error {
                 // This error handling could be improved by having an embedded error display instead of an UIAlertController
                 // It would also be an opportunity to add a Retry button
-                self.present(UIAlertController(title: R.string.localizable.error(),
-                                               message: error.localizedDescription,
-                                               preferredStyle: .alert),
-                             animated: true,
-                             completion: nil)
-            } else if let model = model {
-                self.model = model
-                self.collectionView.reloadData()
+                let alertController = UIAlertController(title: R.string.localizable.error(),
+                                                        message: error.localizedDescription,
+                                                        preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
             }
+            self.model = model
+            self.collectionView.reloadData()
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func onFavoritesTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: R.segue.discoverViewController.showFavorites, sender: nil)
     }
 }
 
@@ -74,7 +91,7 @@ extension DiscoverViewController: UICollectionViewDataSource {
         guard let model = self.model?.results?[indexPath.row] else {
             preconditionFailure("Attempted to dequeue invalid row")
         }
-        cell.configure(viewModel: DiscoverMovieCollectionViewCellViewModel(discoverMovieModel: model))
+        cell.configure(viewModel: DiscoverMovieCollectionViewCellViewModel(movieModel: model))
         return cell
     }
 }
@@ -82,7 +99,7 @@ extension DiscoverViewController: UICollectionViewDataSource {
 extension DiscoverViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
-            preconditionFailure("Supports only FlowLayout")
+            preconditionFailure("This implementation only supports FlowLayout")
         }
         // This could be improved by caching the size of the cells for a certain sizeclass after the first calculation
         // Fit 2 cells when regular, fit 1 when compact

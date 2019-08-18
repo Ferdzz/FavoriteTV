@@ -17,3 +17,5 @@
 // MARL: - Generic
 
 "error" = "Error";
+"ok" = "Ok";
+"favorites" = "Favorites";

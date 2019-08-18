@@ -47,6 +47,9 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7dC-Xz-BUL">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="colorBackground"/>
                         <constraints>
@@ -54,17 +57,58 @@
                             <constraint firstItem="Aar-vn-0rB" firstAttribute="top" secondItem="Lw5-dO-kEj" secondAttribute="top" id="JFV-VR-c5k"/>
                             <constraint firstItem="Lw5-dO-kEj" firstAttribute="bottom" secondItem="Aar-vn-0rB" secondAttribute="bottom" id="QfT-hT-MYZ"/>
                             <constraint firstItem="Lw5-dO-kEj" firstAttribute="trailing" secondItem="Aar-vn-0rB" secondAttribute="trailing" id="TqU-99-ijM"/>
+                            <constraint firstItem="7dC-Xz-BUL" firstAttribute="centerX" secondItem="sUd-HK-4ES" secondAttribute="centerX" id="pwf-k9-Fb0"/>
+                            <constraint firstItem="7dC-Xz-BUL" firstAttribute="centerY" secondItem="sUd-HK-4ES" secondAttribute="centerY" id="vKL-Ol-aeH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lw5-dO-kEj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sed-dr-fCe"/>
+                    <navigationItem key="navigationItem" id="sed-dr-fCe">
+                        <barButtonItem key="rightBarButtonItem" title="!! Favorites" id="1WA-fe-pbb">
+                            <connections>
+                                <action selector="onFavoritesTapped:" destination="eN6-cB-hxh" id="DRB-xM-FZT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="7dC-Xz-BUL" id="sxh-qM-eBw"/>
                         <outlet property="collectionView" destination="Aar-vn-0rB" id="aKp-8h-zlS"/>
+                        <outlet property="favoritesBarButtonItem" destination="1WA-fe-pbb" id="Deb-K1-Rpe"/>
+                        <segue destination="4s1-gw-dnI" kind="show" identifier="showFavorites" id="ehR-rY-6O8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWi-Hc-ECj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71.014492753623188" y="158.70535714285714"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="xGO-iY-5hR">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="4s1-gw-dnI" customClass="FavoritesViewController" customModule="FavoriteTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FtP-Sk-Lfd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1lG-R6-7Oa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M76-A5-WY4" firstAttribute="bottom" secondItem="1lG-R6-7Oa" secondAttribute="bottom" id="MK3-ZU-jPE"/>
+                            <constraint firstItem="1lG-R6-7Oa" firstAttribute="top" secondItem="M76-A5-WY4" secondAttribute="top" id="WS9-cB-uPN"/>
+                            <constraint firstItem="1lG-R6-7Oa" firstAttribute="leading" secondItem="M76-A5-WY4" secondAttribute="leading" id="bL1-dX-yK2"/>
+                            <constraint firstItem="M76-A5-WY4" firstAttribute="trailing" secondItem="1lG-R6-7Oa" secondAttribute="trailing" id="dYz-b4-qRU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M76-A5-WY4"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="1lG-R6-7Oa" id="iAx-EV-oxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="um1-r9-UZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="159"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  DiscoverMovieResponseModel.swift
+//  MovieResponseModel.swift
 //  FavoriteTV
 //
 //  Created by DESCHENES, Frédéric (MTL) on 2019-08-18.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class DiscoverMovieResponseModel: Mappable {
+class MovieResponseModel: Mappable {
     var vote_count: Int?
     var id: Int?
     var video: Bool?

@@ -16,11 +16,11 @@ class DiscoverManager {
         self.store = DiscoverStore()
     }
     
-    func discover(completion: @escaping (DiscoverModel?, Error?) -> Void) {
+    func discover(completion: @escaping (MoviesModel?, Error?) -> Void) {
         // This could be upgraded to support the page index to enable paging / infinite scrolling
         self.store.discover { (response, error) in
             if let response = response {
-                completion(DiscoverModel(discoverResponseModel: response), nil)
+                completion(MoviesModel(moviesResponseModel: response), nil)
             } else {
                 completion(nil, error)
             }

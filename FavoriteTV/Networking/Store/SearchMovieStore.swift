@@ -1,0 +1,46 @@
+//
+//  SearchMovieStore.swift
+//  FavoriteTV
+//
+//  Created by DESCHENES, Frédéric (MTL) on 2019-08-18.
+//  Copyright © 2019 DESCHENES, Frédéric (MTL). All rights reserved.
+//
+
+import Foundation
+import Alamofire
+import AlamofireObjectMapper
+
+class SearchMovieStore {
+    
+    /// Static list of all favorite movies. Of course this should be changed to persistent storage
+    static var favoriteMovies: [MovieModel] = []
+    
+    /// Calls tmdb discover API https://developers.themoviedb.org/3/search/search-movies
+    ///
+    /// The async callback contains the DiscoverResponseModel on success, or the Error model on failure
+    func search(query: String, completion: @escaping (MoviesResponseModel?, Error?) -> Void) {
+        // This networking layer could be reworked to make it so we don't have to specify the paramters
+        // everytime, or have to parse the JSON manually. For now this will have to do
+        let discoverUrl = "\(Constants.tmdbApiRoot)/search/movie"
+        let parameters: Parameters = ["api_key": Constants.tmdbApiKey,
+                                      "query": query]
+        Alamofire.request(discoverUrl, method: .get, parameters: parameters)
+            .responseObject { (response: DataResponse<MoviesResponseModel>) in
+                completion(response.result.value, response.result.error)
+        }
+    }
+    
+    // TODO: Favorites should be moved to their own store
+    
+    func toggleFavorite(movie: MovieModel) {
+        if self.isFavorite(movie: movie) {
+            SearchMovieStore.favoriteMovies.removeAll(where: { $0.id == movie.id })
+        } else {
+            SearchMovieStore.favoriteMovies.append(movie)
+        }
+    }
+    
+    func isFavorite(movie: MovieModel) -> Bool {
+        return SearchMovieStore.favoriteMovies.contains(where: { $0.id == movie.id })
+    }
+}

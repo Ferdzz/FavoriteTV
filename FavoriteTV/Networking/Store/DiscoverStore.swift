@@ -15,13 +15,13 @@ class DiscoverStore {
     /// Calls tmdb discover API https://developers.themoviedb.org/3/discover/movie-discover
     ///
     /// The async callback contains the DiscoverResponseModel on success, or the Error model on failure
-    func discover(completion: @escaping (DiscoverResponseModel?, Error?) -> Void) {
+    func discover(completion: @escaping (MoviesResponseModel?, Error?) -> Void) {
         // This networking layer could be reworked to make it so we don't have to specify the paramters
         // everytime, or have to parse the JSON manually. For now this will have to do
         let discoverUrl = "\(Constants.tmdbApiRoot)/discover/movie"
         let parameters: Parameters = ["api_key": Constants.tmdbApiKey]
         Alamofire.request(discoverUrl, method: .get, parameters: parameters)
-            .responseObject { (response: DataResponse<DiscoverResponseModel>) in
+            .responseObject { (response: DataResponse<MoviesResponseModel>) in
                 completion(response.result.value, response.result.error)
         }
     }
