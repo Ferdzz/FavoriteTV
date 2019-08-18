@@ -13,3 +13,7 @@
 // MARK: - Search
 
 "search.title" = "Search";
+
+// MARL: - Generic
+
+"error" = "Error";

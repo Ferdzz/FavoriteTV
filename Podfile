@@ -6,7 +6,10 @@ target 'FavoriteTV' do
   use_frameworks!
 
   # Pods for FavoriteTV
-  pod 'R.swift'
+  pod 'R.swift', '~> 5.0.3'
+  pod 'Alamofire', '~> 4.8.0'
+  pod 'AlamofireObjectMapper', '~> 5.2'
+
 
   target 'FavoriteTVTests' do
     inherit! :search_paths

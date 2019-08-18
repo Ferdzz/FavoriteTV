@@ -1,20 +1,33 @@
 PODS:
+  - Alamofire (4.8.2)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - ObjectMapper (3.5.1)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
 
 DEPENDENCIES:
-  - R.swift
+  - Alamofire (~> 4.8.0)
+  - AlamofireObjectMapper (~> 5.2)
+  - R.swift (~> 5.0.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
 
-PODFILE CHECKSUM: 0991739b67634ebc597b3056f62624be1cba2d7a
+PODFILE CHECKSUM: dedb520bbe920ed5e13f96ef7c9aa6713198488c
 
 COCOAPODS: 1.6.1

@@ -24,6 +24,13 @@
 		B8D0D3132309B7A50017B1E5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3122309B7A50017B1E5 /* R.generated.swift */; };
 		B8D0D3172309C1270017B1E5 /* DiscoverMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3152309C1270017B1E5 /* DiscoverMovieCollectionViewCell.swift */; };
 		B8D0D3182309C1270017B1E5 /* DiscoverMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D0D3162309C1270017B1E5 /* DiscoverMovieCollectionViewCell.xib */; };
+		B8D0D31A2309CF6B0017B1E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3192309CF6B0017B1E5 /* Constants.swift */; };
+		B8D0D3232309D0280017B1E5 /* DiscoverStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3222309D0280017B1E5 /* DiscoverStore.swift */; };
+		B8D0D3252309D2A00017B1E5 /* DiscoverResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3242309D2A00017B1E5 /* DiscoverResponseModel.swift */; };
+		B8D0D3272309D3F20017B1E5 /* DiscoverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3262309D3F20017B1E5 /* DiscoverManager.swift */; };
+		B8D0D3292309D62B0017B1E5 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D3282309D62B0017B1E5 /* DiscoverModel.swift */; };
+		B8D0D32B2309D76A0017B1E5 /* DiscoverMovieResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D32A2309D76A0017B1E5 /* DiscoverMovieResponseModel.swift */; };
+		B8D0D32D2309D9040017B1E5 /* DiscoverMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0D32C2309D9040017B1E5 /* DiscoverMovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +79,13 @@
 		B8D0D3122309B7A50017B1E5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B8D0D3152309C1270017B1E5 /* DiscoverMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8D0D3162309C1270017B1E5 /* DiscoverMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverMovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		B8D0D3192309CF6B0017B1E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B8D0D3222309D0280017B1E5 /* DiscoverStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverStore.swift; sourceTree = "<group>"; };
+		B8D0D3242309D2A00017B1E5 /* DiscoverResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverResponseModel.swift; sourceTree = "<group>"; };
+		B8D0D3262309D3F20017B1E5 /* DiscoverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverManager.swift; sourceTree = "<group>"; };
+		B8D0D3282309D62B0017B1E5 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
+		B8D0D32A2309D76A0017B1E5 /* DiscoverMovieResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieResponseModel.swift; sourceTree = "<group>"; };
+		B8D0D32C2309D9040017B1E5 /* DiscoverMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieModel.swift; sourceTree = "<group>"; };
 		D915E87A16D7C0361BFCA0A3 /* Pods_FavoriteTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoriteTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC12753082ED34838B37FFD /* Pods-FavoriteTVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteTVUITests.debug.xcconfig"; path = "Target Support Files/Pods-FavoriteTVUITests/Pods-FavoriteTVUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +166,7 @@
 		B8AAC1A42309A86D003FCF8E /* FavoriteTV */ = {
 			isa = PBXGroup;
 			children = (
+				B8D0D31B2309CF790017B1E5 /* Networking */,
 				B8D0D3142309C1020017B1E5 /* View */,
 				B8D0D3012309B54F0017B1E5 /* Localization */,
 				B8AAC1D32309ADFF003FCF8E /* Storyboard */,
@@ -207,6 +222,7 @@
 			children = (
 				B8D0D3122309B7A50017B1E5 /* R.generated.swift */,
 				B8AAC1A52309A86D003FCF8E /* AppDelegate.swift */,
+				B8D0D3192309CF6B0017B1E5 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +265,51 @@
 				B8D0D3162309C1270017B1E5 /* DiscoverMovieCollectionViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B8D0D31B2309CF790017B1E5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0D31D2309CF880017B1E5 /* Manager */,
+				B8D0D31C2309CF820017B1E5 /* Store */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B8D0D31C2309CF820017B1E5 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0D3202309CF9C0017B1E5 /* ResponseModel */,
+				B8D0D3222309D0280017B1E5 /* DiscoverStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		B8D0D31D2309CF880017B1E5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0D3212309CFA60017B1E5 /* Model */,
+				B8D0D3262309D3F20017B1E5 /* DiscoverManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B8D0D3202309CF9C0017B1E5 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0D3242309D2A00017B1E5 /* DiscoverResponseModel.swift */,
+				B8D0D32A2309D76A0017B1E5 /* DiscoverMovieResponseModel.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
+		B8D0D3212309CFA60017B1E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0D3282309D62B0017B1E5 /* DiscoverModel.swift */,
+				B8D0D32C2309D9040017B1E5 /* DiscoverMovieModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,12 +502,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FavoriteTV/Pods-FavoriteTV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,11 +569,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D0D3292309D62B0017B1E5 /* DiscoverModel.swift in Sources */,
 				B8AAC1DE2309B1DE003FCF8E /* DiscoverViewController.swift in Sources */,
 				B8D0D3172309C1270017B1E5 /* DiscoverMovieCollectionViewCell.swift in Sources */,
+				B8D0D3232309D0280017B1E5 /* DiscoverStore.swift in Sources */,
+				B8D0D3272309D3F20017B1E5 /* DiscoverManager.swift in Sources */,
 				B8AAC1A82309A86D003FCF8E /* HomeViewController.swift in Sources */,
 				B8AAC1A62309A86D003FCF8E /* AppDelegate.swift in Sources */,
+				B8D0D32D2309D9040017B1E5 /* DiscoverMovieModel.swift in Sources */,
+				B8D0D3252309D2A00017B1E5 /* DiscoverResponseModel.swift in Sources */,
 				B8D0D3132309B7A50017B1E5 /* R.generated.swift in Sources */,
+				B8D0D31A2309CF6B0017B1E5 /* Constants.swift in Sources */,
+				B8D0D32B2309D76A0017B1E5 /* DiscoverMovieResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
