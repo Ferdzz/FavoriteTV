@@ -36,7 +36,6 @@ class DiscoverViewController: UIViewController {
 
         // Start request
         self.fetchData()
-        
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

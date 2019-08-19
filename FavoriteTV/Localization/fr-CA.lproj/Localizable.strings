@@ -6,4 +6,16 @@
   Copyright © 2019 DESCHENES, Frédéric (MTL). All rights reserved.
 */
 
-"test" = "Woo FR";
+// MARK: - Discover
+
+"discover.title" = "Découvrir";
+
+// MARK: - Search
+
+"search.title" = "Recherche";
+
+// MARL: - Generic
+
+"error" = "Erreur";
+"ok" = "Ok";
+"favorites" = "Favoris";
